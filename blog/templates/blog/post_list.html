@@ -9,16 +9,23 @@
 </head>
 <body>
     <div><h1><a href="#">Alex's BLOG</a></h1></div>
-    <div>
-        <p>Published date</p>
-        <h2><a href="#">My first post</a></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, obcaecati.</p>
-    </div>
-    <div>
-        <p>Published date</p>
-        <h2><a href="#">My second post</a></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto aspernatur blanditiis earum, praesentium vero.</p>
-    </div>
+    {% for po in posts%}
+        <div>
+            <p>Published date: {{ po.published_data }}</p>
+            <h2><a href="#">{{ po.title }}</a></h2>
+            <p> {{ po.text | linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+<!--    <div>-->
+<!--        <p>Published date</p>-->
+<!--        <h2><a href="#">My first post</a></h2>-->
+<!--        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, obcaecati.</p>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <p>Published date</p>-->
+<!--        <h2><a href="#">My second post</a></h2>-->
+<!--        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto aspernatur blanditiis earum, praesentium vero.</p>-->
+<!--    </div>-->
 
 </body>
 </html>
